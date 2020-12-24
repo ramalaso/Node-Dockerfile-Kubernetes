@@ -11,6 +11,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+let pingcheck = new health.PingCheck('example.com')
+healthcheck.registerLivenessCheck(pingcheck)
 app.use('/live', health.LivenessEndpoint(healthcheck))
 
 // view engine setup
