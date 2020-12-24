@@ -1,3 +1,4 @@
+var zipkin = require('appmetrics-zipkin')
 var prom = require('appmetrics-prometheus').attach()
 var createError = require('http-errors');
 var express = require('express');
