@@ -14,6 +14,7 @@ var app = express();
 let pingcheck = new health.PingCheck('example.com')
 healthcheck.registerLivenessCheck(pingcheck)
 app.use('/live', health.LivenessEndpoint(healthcheck))
+app.use('/ready', health.ReadinessEndpoint(healthcheck))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
